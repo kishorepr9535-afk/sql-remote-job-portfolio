@@ -1,10 +1,37 @@
--- Day 4/30: GROUP BY + HAVING - City Revenue Dashboard
--- Business Problem: Find top revenue cities + expansion opportunities
--- Denmark Use Case: Regional sales dashboards, market analysis
-
+-- Step 1: Create database + tables if you haven't
+CREATE DATABASE IF NOT EXISTS school;
 USE school;
 
--- Main Query: City-wise revenue + student analytics
+CREATE TABLE IF NOT EXISTS students (
+    name VARCHAR(50),
+    city VARCHAR(50),
+    marks INT
+);
+
+CREATE TABLE IF NOT EXISTS fees (
+    name VARCHAR(50),
+    amount_paid INT,
+    fee_month VARCHAR(20)
+);
+
+-- Step 2: Insert sample data for Day 4
+INSERT INTO students VALUES
+('Kishore', 'Kasaragod', 85),
+('Arjun', 'Bangalore', 92),
+('Meera', 'Kasaragod', 78),
+('Ravi', 'Bangalore', 88),
+('Priya', 'Chennai', 95),
+('Arjun', 'Mumbai', 75);  -- duplicate name, different city/marks
+
+INSERT INTO fees VALUES
+('Kishore', 5000, 'Jan'),
+('Arjun', 8000, 'Jan'),  -- Bangalore Arjun
+('Meera', 0, 'Jan'),     -- didn't pay
+('Ravi', 7500, 'Jan'),
+('Priya', 9000, 'Jan');
+-- Mumbai Arjun didn't pay - shows in LEFT JOIN
+
+-- Step 3: NOW run your Day 4 query
 SELECT 
     s.city,
     COUNT(DISTINCT s.name) AS total_students,
@@ -17,16 +44,5 @@ SELECT
 FROM students s
 LEFT JOIN fees f ON s.name = f.name
 GROUP BY s.city
-HAVING total_revenue > 0  -- Only show cities that made money
+HAVING total_revenue > 0
 ORDER BY total_revenue DESC;
-
--- Expansion Query: Small cities with high avg fees = growth targets
-SELECT 
-    s.city,
-    COUNT(DISTINCT s.name) AS student_count,
-    ROUND(AVG(f.amount_paid), 2) AS avg_fee
-FROM students s
-JOIN fees f ON s.name = f.name
-GROUP BY s.city
-HAVING COUNT(DISTINCT s.name) < 3 AND AVG(f.amount_paid) > 7000
-ORDER BY avg_fee DESC;

@@ -35,7 +35,7 @@ SQL Skills: LEFT JOIN, COALESCE, CASE WHEN for NULL handling
 Denmark/EU Use Case: Monthly SaaS churn reports, customer payment tracking
 
 ### Result Screenshots
-Part 1: Query Execution + Initial Results
+Part 1: Query Execution 
 ![Day 3 LEFT JOIN Part 1](./day3_LEFT_JOIN_part1.png)
 
 Part 2: NULL Handling - Churned Students Identified

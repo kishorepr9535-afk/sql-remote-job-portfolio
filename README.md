@@ -24,3 +24,28 @@ Day 3: LEFT JOIN + Handling Missing Data | NULL values
 
 ---
 *Built with MySQL Workbench | Documented for remote job applications*
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+## Day 3: LEFT JOIN + NULL Handling - Churn Detection
+
+Business Problem: Find ALL students including those who never paid fees
+
+SQL Skills: LEFT JOIN, COALESCE, CASE WHEN for NULL handling
+
+Denmark/EU Use Case: Monthly SaaS churn reports, customer payment tracking
+
+### Result Screenshot
+![Day 3 LEFT JOIN Result](./day3_LEFT_JOIN_part1.png,/day3_LEFT_JOIN_part2.png)
+
+Business Impact: Identified 2 students with ₹0 payment = ₹20,000 recovery opportunity
+
+Data Note: Handled duplicate student names with different marks/cities - real-world dirty data scenario
+
+Files: day3_LEFT_JOIN.sql
+
+---
+
+## LinkedIn Progress
+Day 2: 44 impressions, 63% IT Services, 1 profile view  
+
+Next: Day 4 - GROUP BY + HAVING for city-wise revenue dashboards

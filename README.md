@@ -34,10 +34,14 @@ SQL Skills: LEFT JOIN, COALESCE, CASE WHEN for NULL handling
 
 Denmark/EU Use Case: Monthly SaaS churn reports, customer payment tracking
 
-### Result Screenshot
-![Day 3 LEFT JOIN Result](./day3_LEFT_JOIN_part1.png,/day3_LEFT_JOIN_part2.png)
+### Result Screenshots
+Part 1: Query Execution + Initial Results
+![Day 3 LEFT JOIN Part 1](./day3_LEFT_JOIN_part1.png)
 
-Business Impact: Identified 2 students with ₹0 payment = ₹20,000 recovery opportunity
+Part 2: NULL Handling - Churned Students Identified
+![Day 3 LEFT JOIN Part 2](./day3_LEFT_JOIN_part2.png)
+
+Business Impact: Identified 2 students with Never Paid status = ₹20,000 recovery opportunity
 
 Data Note: Handled duplicate student names with different marks/cities - real-world dirty data scenario
 
@@ -46,6 +50,7 @@ Files: day3_LEFT_JOIN.sql
 ---
 
 ## LinkedIn Progress
-Day 2: 44 impressions, 63% IT Services, 1 profile view  
+Day 2: 88 impressions, 63% IT Services, 1 profile view  
+Day 3: Building churn detection logic - found revenue leaks
 
 Next: Day 4 - GROUP BY + HAVING for city-wise revenue dashboards

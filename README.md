@@ -54,3 +54,48 @@ Day 2: 88 impressions, 63% IT Services, 1 profile view
 Day 3: Building churn detection logic - found revenue leaks
 
 Next: Day 4 - GROUP BY + HAVING for city-wise revenue dashboards
+------------------------------------------------------------------
+------------------------------------------------------------------
+# Day 4: GROUP BY + HAVING - City Revenue Analytics
+
+30-Day SQL Portfolio for Denmark Remote Data Jobs  
+Date: May 7, 2026  
+Timezone: IST 2:30pm-11:30pm = 11am-8pm CET overlap
+
+---
+
+## Business Problem
+A SaaS company needs to know:  
+1. Which cities generate highest revenue?  
+2. What's the payment conversion rate per city?  
+3. Where should sales team focus recovery efforts?
+
+Real-world use: Trustpilot, Pleo, Zendesk EU use this exact query for regional performance.
+
+---
+
+## Skills Learned
+* SQL Concept | Business Use | Denmark Interview Q |
+* --- | --- | --- |
+* GROUP BY | Aggregate data by region/category | Collapse rows by column |
+* HAVING | Filter groups after aggregation | Diff vs WHERE |
+* LEFT JOIN | Include all customers, even non-payers | Find churned users |
+* COUNT(DISTINCT) | Unique customers per city | Handle duplicate names |
+* COALESCE | Replace NULL with 0 | Clean reporting data |
+* ROUND | Format metrics for dashboards | 2 decimal ARPU |
+
+---
+
+## Database Schema
+
+students table - Customer master
+`sql
+CREATE TABLE students (
+    name VARCHAR(50),    -- Customer name
+    city VARCHAR(50),    -- Region/City
+    marks INT            -- Engagement score
+);
+
+
+
+    
